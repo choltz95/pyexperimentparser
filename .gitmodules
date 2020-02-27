@@ -1,0 +1,9 @@
+[submodule "submodule/m-phate"]
+	path = submodule/m-phate
+	url = https://github.com/scottgigante/m-phate.git
+[submodule "submodule/OASIS"]
+	path = submodule/OASIS
+	url = https://github.com/j-friedrich/OASIS.git
+[submodule "submodule/deconv"]
+	path = submodule/deconv
+	url = https://github.com/choltz95/deconv.git
