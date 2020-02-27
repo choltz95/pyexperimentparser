@@ -3,7 +3,7 @@
 		"_comment": {
 			"frameRateRatio": "6*3"
 		},
-		"data_dir": "/Users/orange3xchicken/nn/pyexperimentparser/data",
+		"data_dir": "/Users/orange3xchicken/pyexperimentparser/data",
 		"output_dir": "./out",
 		"processors": -1,
 		"verbosity": 11,

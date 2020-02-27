@@ -61,14 +61,13 @@ class Dataset:
             ct = "_1"
         else:
             ct = "_2"
-        exp_dirs = [os.path.join(day_dir,dI) for dI in os.listdir(day_dir) if (os.path.isdir(os.path.join(day_dir,dI)) 
-                                                                            and dI[-2:] == ct)]
+        exp_dirs = [os.path.join(day_dir,dI) for dI in os.listdir(day_dir) if Path(os.path.join(day_dir,dI)).is_file() and dI[-6:-4] == ct]
+
         exp_list = []
         for j, exp_dir in enumerate(exp_dirs):
-            if Path(exp_dir + '.pkl').is_file():
-                exp = Experiment(-1) # temporary instance
-                experiment = exp.load_from_pkl(exp_dir + '.pkl')
-                exp_list.append(experiment)    
+            exp = Experiment(-1) # temporary instance
+            experiment = exp.load_from_pkl(exp_dir)
+            exp_list.append(experiment)    
         return exp_list 
 
     def to_pckl(self):
