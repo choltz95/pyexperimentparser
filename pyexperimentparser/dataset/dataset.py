@@ -44,8 +44,8 @@ class Dataset:
             exp_dirs = [os.path.join(day_dir,dI) for dI in os.listdir(day_dir) if os.path.isdir(os.path.join(day_dir,dI))]
             for j, exp_dir in enumerate(exp_dirs):
                 if Path(exp_dir + '.pkl').is_file():
-                    continue
-                    #pass
+                    #continue
+                    pass
                 else:
                     print('loading', exp_dir)
                 experiment = Experiment(idx)
@@ -62,12 +62,11 @@ class Dataset:
         else:
             ct = "_2"
         exp_dirs = [os.path.join(day_dir,dI) for dI in os.listdir(day_dir) if Path(os.path.join(day_dir,dI)).is_file() and dI[-6:-4] == ct]
-
         exp_list = []
         for j, exp_dir in enumerate(exp_dirs):
             exp = Experiment(-1) # temporary instance
             experiment = exp.load_from_pkl(exp_dir)
-            exp_list.append(experiment)    
+            exp_list.append(experiment)
         return exp_list 
 
     def to_pckl(self):

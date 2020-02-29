@@ -5,12 +5,12 @@
 		},
 		"data_dir": "/Users/orange3xchicken/pyexperimentparser/data",
 		"output_dir": "./out",
-		"processors": -1,
+		"processors": 1,
 		"verbosity": 11,
 		"frame_rate_ratio": 18, 
 		"rois_per_trial_num": 1,
 		"event_name_list": ["Lift","Grab","Sup","Atmouth","Chew","Sniff","Handopen","Botharm","Tone","Table"],
-		"dates_to_process": ["8_13_17", "8_6_17", "8_7_17"],
+		"dates_to_process": ["8_6_17", "8_7_17"],
 		"cell_type": "soma"
 	}
 }

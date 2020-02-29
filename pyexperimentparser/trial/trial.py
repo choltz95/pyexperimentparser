@@ -37,7 +37,6 @@ class Trial:
         
         strROIs = engine.eng.load(tpa_fname)['strROI']
         strShifts = engine.eng.load(tpa_fname)['strShift']
-
         for i, strROI in enumerate(strROIs):
             try:
                 tmp_tpa = tpa.Tpa()
