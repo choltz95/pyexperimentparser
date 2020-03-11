@@ -1,6 +1,7 @@
 M-Phate instructions
 
 1. git clone --recursive https://github.com/choltz95/pyexperimentparser.git
+ - install requirements via `pip install -r requirements.txt` in the base directory
 
 2. Download 'gold' (8/6/17, 8/7/17) experiment pickle files:
 https://drive.google.com/drive/folders/1zWJqgqoREWmKZyejpjm4quc3doBfsFMB?usp=sharing
