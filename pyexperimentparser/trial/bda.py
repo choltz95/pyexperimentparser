@@ -3,8 +3,11 @@ import pickle
 
 from joblib import Parallel, delayed
 
-import matlab.engine
 import engine
+try:
+    import matlab.engine
+except:
+    pass
 
 import random
 

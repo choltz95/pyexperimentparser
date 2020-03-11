@@ -1,5 +1,8 @@
-import matlab.engine
-
+try:
+    import matlab.engine
+except:
+    print('[DEBUG] No matlab installation found. Impory by Pickle supported.')
+    pass
 from pyexperimentparser.dataset.dataset import  Dataset
 from pyexperimentparser.experiment.experiment import  Experiment
 from pyexperimentparser.trial.trial import Trial

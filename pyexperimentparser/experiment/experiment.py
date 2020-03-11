@@ -4,8 +4,11 @@ import pickle
 import os
 from pathlib import Path
 
-import matlab.engine
 import engine
+try:
+    import matlab.engine
+except:
+    pass
 
 from pyexperimentparser.trial import trial
 from pyexperimentparser.trial import Bda

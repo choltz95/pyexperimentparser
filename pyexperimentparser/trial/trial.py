@@ -1,8 +1,11 @@
 import numpy as np
 import pickle
 
-import matlab.engine
 import engine
+try:
+    import matlab.engine
+except:
+    pass
 
 from pathlib import Path
 

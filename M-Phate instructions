@@ -1,0 +1,10 @@
+M-Phate instructions
+
+1. git clone --recursive https://github.com/choltz95/pyexperimentparser.git
+
+2. Download 'gold' (8/6/17, 8/7/17) experiment pickle files:
+https://drive.google.com/drive/folders/1zWJqgqoREWmKZyejpjm4quc3doBfsFMB?usp=sharing
+
+3. Optionally edit config file to set # cores, etc. (no need to set data directory)
+
+4. Example workflow in examples/mphate.ipynb
