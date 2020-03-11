@@ -17,7 +17,7 @@ from joblib import Parallel, delayed
 import matlab.engine
 import engine
 
-
+"""
 from pyexperimentparser.dataset import dataset
 from pyexperimentparser.experiment import Experiment
 from pyexperimentparser.trial import trial
@@ -105,3 +105,4 @@ def make_plot():
     ax4.imshow(eventDataArray, aspect='auto')
 
     plt.savefig('trial_' + str(trialIndShow))
+"""

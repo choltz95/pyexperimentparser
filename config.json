@@ -5,7 +5,7 @@
 		},
 		"data_dir": "/Users/orange3xchicken/pyexperimentparser/data",
 		"output_dir": "./out",
-		"processors": 1,
+		"processors": 40,
 		"verbosity": 11,
 		"frame_rate_ratio": 18, 
 		"rois_per_trial_num": 1,

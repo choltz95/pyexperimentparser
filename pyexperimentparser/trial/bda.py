@@ -1,26 +1,26 @@
 import numpy as np
-import pandas as pd
-from random import shuffle
-import scipy
-import scipy.io
-import matplotlib
-import matplotlib.pyplot as plt
-import os, glob, struct, sys, time, gzip, copy, logging
-import math, random
 import pickle
-from tqdm import tqdm
-from collections import OrderedDict
-from pathlib import Path
 
 from joblib import Parallel, delayed
 
 import matlab.engine
 import engine
 
+import random
 
-class Bda: # TPA_event_manager
-    VERSION             = '2308' # SW version supported
-    
+class Bda:
+    """ BDA
+
+    Parameters
+    ----------
+
+    Notes
+    -----
+
+    Examples
+    -----
+    """
+
     def __init__(self):
         self.idx = 0
         self.fname = ''

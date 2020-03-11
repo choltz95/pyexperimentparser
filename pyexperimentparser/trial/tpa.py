@@ -1,25 +1,26 @@
 import numpy as np
-import pandas as pd
-from random import shuffle
-import scipy
-import scipy.io
-import matplotlib
-import matplotlib.pyplot as plt
-import os, glob, struct, sys, time, gzip, copy, logging
-import math, random
 import pickle
-from tqdm import tqdm
-from collections import OrderedDict
-from pathlib import Path
 
 from joblib import Parallel, delayed
 
 import matlab.engine
 import engine
 
+import random
 
-class Tpa: # TPA_roi_manager
-    VERSION             = '2305' # SW version supported
+class Tpa:
+    """ TPA
+
+    Parameters
+    ----------
+
+    Notes
+    -----
+
+    Examples
+    -----
+    """
+
 
     def __init__(self):
         self.idx = 0
@@ -81,7 +82,7 @@ class Tpa: # TPA_roi_manager
         self.ROI_TYPES           = {'RECT':1,'ELLIPSE':2,'FREEHAND':3}
         self.ROI_AVERAGE_TYPES   = {'MEAN':1,'LOCAL_MAXIMA':2,'LINE_ORTHOG':3}
         
-        
+
     def load(self, strRoi, strShift):
         properties = engine.eng.properties(strRoi)
         engine.eng.workspace["temp_obj"] = strRoi

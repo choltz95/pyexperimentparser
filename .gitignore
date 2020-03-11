@@ -1,6 +1,12 @@
 out/
 data/
+data_pkl/
+*gridsearch/
 *__pycache__*
 scripts/
 *.DS_Store*
 *.pkl
+*.png
+*.pyc
+*checkpoint*
+*.swp

@@ -39,7 +39,7 @@
 % analysisDir         = 'C:\Users\galga\Dropbox\research\studies\Adavanced topics in Signal Processing\D10\8_6_14_1-20_control\';
 %analysisDir         = '..\..\..\datasets\biomed\behavioral\8_6_14_1-20_control\';
 %analysisDir         = '..\..\..\datasets\biomed\D30new\8_12_14_1-40';
-analysisDir         = '../data/3_28_17/3_28_17_1/'
+analysisDir         = '../data/8_6_17_1/'
 
 % special trial (repetition) to show (Change it if you need)
 trialIndShow        = 3;
