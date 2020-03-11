@@ -14,7 +14,10 @@ from pathlib import Path
 
 from joblib import Parallel, delayed
 
-import matlab.engine
+try:
+    import matlab.engine
+except:
+    pass
 import engine
 
 """
