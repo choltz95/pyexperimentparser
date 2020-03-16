@@ -52,11 +52,9 @@ class Trial:
         
     def load(self, eng):
         #assert 'eng' in globals(). use global if param eng not none
-        print(self.tpa_fname)
         _mtlb_tpa = engine.eng.load(self.tpa_fname)
         _mtlb_bda = engine.eng.load(self.bda_fname)
 
-        print(_mtlb_tpa)
         assert all(key in list(_mtlb_tpa.keys()) for key in ['strROI','strShift']), \
             "tpa malformed %s"  % self.tpa_fname
         assert 'strEvent' in list(_mtlb_bda.keys()),  \

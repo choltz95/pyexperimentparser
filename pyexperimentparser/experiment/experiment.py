@@ -54,12 +54,12 @@ class Experiment:
             self.tpa_fname_list = [fpath for fpath in glob.glob(self.directory + "TPA*")]
             self.bda_fname_list = [fpath for fpath in glob.glob(self.directory + "BDA*")]
 
-        self.trial_list = []
-        self.dataset_index = idx
+            self.trial_list = []
+            self.dataset_index = idx
 
-        # comment the format 
-        self.day_index = str(self.directory).split('/')[-2].split('_')[-1]
-        self.date = str(self.directory).split('/')[-2].split('_')[0]
+            # comment the format 
+            self.day_index = str(self.directory).split('/')[-2].split('_')[-1]
+            self.date = str(self.directory).split('/')[-2].split('_')[0]
 
         self.load()
 
@@ -72,13 +72,16 @@ class Experiment:
 
     def _deserialize_from_mat(self):
         """load from matlab files"""
-        for bda_fname, tpa_fname in zip(self.bda_fname_list, self.tpa_fname_list):
+        # sort bdafnames and tpa fnames by index
+        self.tpa_fname_list.sort(key=lambda x: int(x.split('/')[-1].split('_')[4]))
+        self.bda_fname_list.sort(key=lambda x: int(x.split('/')[-1].split('_')[4]))
+
+        for idx, (bda_fname, tpa_fname) in enumerate(zip(self.bda_fname_list, self.tpa_fname_list)):
             try:
-                idx = int(bda_fname.split('/')[-1].split('_')[4])
                 tr = trial.Trial(idx, bda_fname, tpa_fname)
                 self.trial_list.append(tr)
             except Exception as e:
-                print("Error (exp):", bda_fname, " ", tpa_fname)
+                print("Error (exp):",idx, " ", bda_fname, " ", tpa_fname)
                 print(str(e))
                 continue
 

@@ -84,6 +84,10 @@ class Tpa:
         self.VIEW_TYPES          = {'XY':1,'YT':2,'XYYT':3}
         self.ROI_TYPES           = {'RECT':1,'ELLIPSE':2,'FREEHAND':3}
         self.ROI_AVERAGE_TYPES   = {'MEAN':1,'LOCAL_MAXIMA':2,'LINE_ORTHOG':3}
+
+        self.arrys = ['xyInd','ytInd','xInd','yInd','zInd','tInd','LineInd','PixInd','Data','ViewXY',
+                      'procROI','ViewYT','pointRef','rectangleInitialPosition','shapeInitialDrawing',
+                      'hFigure','hAxes','hImage']
         
 
     def load(self, strRoi, strShift):
@@ -93,9 +97,10 @@ class Tpa:
             prop_query = engine.eng.eval("temp_obj."+prop)
             if prop == 'procROI':
                 continue
-            elif prop == 'Data':
+            elif prop in self.arrys:
                 setattr(self, prop, np.asarray(prop_query))
-                self.procROI = self.Data[:,1]
+                if prop == "Data":
+                    self.procROI = self.Data[:,1]
             else:
                 setattr(self, prop, prop_query)
 

@@ -79,13 +79,17 @@ class Bda:
         self.STATE_TYPES         = {'NONE':1,'INIT':2,'VIEWXY':3,'VIEWYT':4,'VIEWALL':5}
         self.VIEW_TYPES          = {'XY':1,'YT':2,'XYYT':3}
         self.ROI_TYPES           = {'RECT':1,'ELLIPSE':2,'FREEHAND':3}
+
+        self.arrys = ['TimeInd','xyInd','ytInd','xInd','yInd','zInd','tInd','Data','ViewXY',
+                      'ViewYT','pointRef','rectangleInitialPosition','shapeInitialDrawing',
+                      'cntxMenu','hFigure','hAxes','hImage']
         
     def load(self,mobj):
         properties = engine.eng.properties(mobj)
         engine.eng.workspace["temp_obj"] = mobj
         for prop in properties:
             prop_query = engine.eng.eval("temp_obj."+prop)
-            if prop == 'Data':
+            if prop in  self.arrys:
                 setattr(self, prop, np.asarray(prop_query))
             else:
                 setattr(self, prop, prop_query)
